@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: hsl(228, 39%, 23%);
+    background-image: url('../images/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: 107% -10%;
+}
+
+.cta {
+    background-image: url('../images/bg-simplify-section-desktop.svg');
+    background-repeat: no-repeat;
+
+}
+
+.carousel__item {
+    width: 350px;
+}
+
+.carousel__item p {
+    line-height: 1.75rem;
+}
+
+.carousel {
+    overflow: hidden;
+    max-width: 350px;
+}
+
+.images {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in;
+}
+
+.menu {
+    display: none;
+}
+
+.menu[data-visible=true] {
+    display: flex;
+    scale: 1;
+    animation: growDown 0.4s ease-in-out forwards;
+    transform-origin: top center;
+}
+
+@keyframes growDown {
+    0% {
+
+        transform: scaleY(0)
+    }
+
+    80% {
+
+        transform: scaleY(1.1)
+    }
+
+    100% {
+
+        transform: scaleY(1)
+    }
+
+}
+
+@keyframes growUp {
+
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+
+        transform: scaleY(1.1)
+    }
+
+    100% {
+
+        transform: scaleY(1)
+    }
+
+}
+
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    aspect-ratio: 1/1;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 36px;
+    height: 4px;
+    border-radius: 20px;
+    transform: rotate(0);
+    transition: all 0.5s ease;
+}
+
+.hamburger-middle {
+    transform: translateY(9px);
+}
+
+.hamburger-bottom {
+    transform: translateY(18px);
+}
+
+.hamburger[aria-expanded=true] {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+
+.hamburger[aria-expanded=true] .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.hamburger[aria-expanded=true] .hamburger-middle {
+    display: none;
+}
+
+.hamburger[aria-expanded=true] .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+
+}
+
+@media (max-width: 576px) {
+    body {
+        background-size: 500px;
+        background-position: 50px -100px;
+    }
+
+    .cta {
+        background-image: url('../images/bg-simplify-section-mobile.svg');
+
+    }
+}
