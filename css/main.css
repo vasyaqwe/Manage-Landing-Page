@@ -534,6 +534,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 5rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -568,6 +572,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-1 {
@@ -715,12 +723,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: hsl(233 12% 13% / var(--tw-bg-opacity));
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
 .p-12 {
   padding: 3rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .py-8 {
@@ -876,64 +884,40 @@ body {
 .menu[data-visible=true] {
   display: flex;
   scale: 1;
-  -webkit-animation: growDown 0.4s ease-in-out forwards;
-          animation: growDown 0.4s ease-in-out forwards;
+  -webkit-animation: rotateX 0.5s ease-in-out forwards;
+          animation: rotateX 0.5s ease-in-out forwards;
   transform-origin: top center;
 }
 
-@-webkit-keyframes growDown {
+@-webkit-keyframes rotateX {
   0% {
-    transform: scaleY(0)
+    opacity: 0;
+    transform: rotateX(-90deg);
   }
 
-  80% {
-    transform: scaleY(1.1)
+  50% {
+    transform: rotateX(-20deg);
   }
 
   100% {
-    transform: scaleY(1)
+    opacity: 1;
+    transform: rotateX(0deg);
   }
 }
 
-@keyframes growDown {
+@keyframes rotateX {
   0% {
-    transform: scaleY(0)
+    opacity: 0;
+    transform: rotateX(-90deg);
   }
 
-  80% {
-    transform: scaleY(1.1)
+  50% {
+    transform: rotateX(-20deg);
   }
 
   100% {
-    transform: scaleY(1)
-  }
-}
-
-@-webkit-keyframes growUp {
-  0% {
-    transform: scaleY(0)
-  }
-
-  80% {
-    transform: scaleY(1.1)
-  }
-
-  100% {
-    transform: scaleY(1)
-  }
-}
-
-@keyframes growUp {
-  0% {
-    transform: scaleY(0)
-  }
-
-  80% {
-    transform: scaleY(1.1)
-  }
-
-  100% {
-    transform: scaleY(1)
+    opacity: 1;
+    transform: rotateX(0deg);
   }
 }
 

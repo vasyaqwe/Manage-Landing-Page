@@ -41,7 +41,7 @@ const changeImage = () => {
 
 function resetInterval() {
     clearInterval(interval);
-    interval = setInterval(run, 2000)
+    interval = setInterval(run, 5000)
 }
 nextBtn.addEventListener('click', () => {
     current++;
